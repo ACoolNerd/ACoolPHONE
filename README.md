@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/ACoolNerd/ACoolPHONE/actions/workflows/ci.yml/badge.svg)](https://github.com/ACoolNerd/ACoolPHONE/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org)
-[![Drizzle ORM](https://img.shields.io/badge/Drizzle-0.44-C5F74F)](https://orm.drizzle.team)
+[![Drizzle ORM](https://img.shields.io/badge/Drizzle-0.45-C5F74F)](https://orm.drizzle.team)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14%2B-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-E8520F)](LICENSE)
