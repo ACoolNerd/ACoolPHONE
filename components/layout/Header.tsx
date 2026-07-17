@@ -1,36 +1,43 @@
-"use client";
-
 import Link from "next/link";
 
 export function Header() {
-  return (
-    <header className="flex h-14 items-center justify-between border-b border-slate-200 bg-white px-6 dark:border-slate-700 dark:bg-slate-900">
-      <div className="flex items-center gap-2">
-        <span className="text-lg font-bold text-slate-900 dark:text-slate-100">
-          ACool<span className="text-brand-500">PHONE</span>
-        </span>
-      </div>
+  const mobileLinks = [
+    ["Overview", "/dashboard"],
+    ["Devices", "/dashboard/devices"],
+    ["Workflows", "/dashboard/tasks"],
+    ["Integrations", "/dashboard/integrations"],
+    ["Audit log", "/dashboard/logs"],
+    ["Settings", "/dashboard/settings"],
+  ] as const;
 
-      <nav className="flex items-center gap-4">
-        <Link
-          href="/dashboard"
-          className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
-        >
-          Dashboard
+  return (
+    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-white/[.07] bg-[#0b0d10]/90 px-4 backdrop-blur-xl sm:px-6 lg:px-8">
+      <Link href="/" className="font-black tracking-[-.04em] text-white lg:hidden">
+        ACool<span className="text-brand-400">PHONE</span>
+      </Link>
+      <div className="hidden items-center gap-2 text-xs text-zinc-600 lg:flex">
+        <span>Workspace</span><span>/</span><span className="font-bold text-zinc-300">Demo tenant</span>
+      </div>
+      <div className="flex items-center gap-3">
+        <details className="group relative lg:hidden">
+          <summary className="cursor-pointer list-none rounded-full border border-white/10 px-3.5 py-2 text-xs font-bold text-zinc-300 transition hover:bg-white/[.05] hover:text-white">
+            Navigate
+          </summary>
+          <nav className="absolute right-0 mt-3 w-52 rounded-2xl border border-white/10 bg-[#15181c] p-2 shadow-2xl" aria-label="Mobile product preview">
+            {mobileLinks.map(([label, href]) => (
+              <Link key={href} href={href} className="block rounded-xl px-3 py-2.5 text-xs font-bold text-zinc-400 hover:bg-white/[.05] hover:text-white">
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </details>
+        <Link href="/" className="hidden rounded-full border border-white/10 px-3.5 py-2 text-xs font-bold text-zinc-300 transition hover:bg-white/[.05] hover:text-white sm:inline-flex">
+          Sales site
         </Link>
-        <Link
-          href="/dashboard/devices"
-          className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
-        >
-          Devices
-        </Link>
-        <Link
-          href="/dashboard/tasks"
-          className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
-        >
-          Tasks
-        </Link>
-      </nav>
+        <div className="grid h-9 w-9 place-items-center rounded-full bg-brand-500 text-xs font-black text-white" aria-label="Demo operator">
+          AN
+        </div>
+      </div>
     </header>
   );
 }

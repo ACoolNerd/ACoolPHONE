@@ -1,4 +1,14 @@
-import type { tenants, users, devices, automationTasks, automationLogs } from "@/lib/db/schema";
+import type {
+  tenants,
+  users,
+  devices,
+  automationTasks,
+  automationLogs,
+  integrations,
+  webhookEvents,
+  subscriptions,
+  auditEvents,
+} from "@/lib/db/schema";
 import type { InferSelectModel, InferInsertModel } from "drizzle-orm";
 
 // ---------------------------------------------------------------------------
@@ -20,6 +30,18 @@ export type NewAutomationTask = InferInsertModel<typeof automationTasks>;
 export type AutomationLog   = InferSelectModel<typeof automationLogs>;
 export type NewAutomationLog = InferInsertModel<typeof automationLogs>;
 
+export type Integration = InferSelectModel<typeof integrations>;
+export type NewIntegration = InferInsertModel<typeof integrations>;
+
+export type WebhookEvent = InferSelectModel<typeof webhookEvents>;
+export type NewWebhookEvent = InferInsertModel<typeof webhookEvents>;
+
+export type Subscription = InferSelectModel<typeof subscriptions>;
+export type NewSubscription = InferInsertModel<typeof subscriptions>;
+
+export type AuditEvent = InferSelectModel<typeof auditEvents>;
+export type NewAuditEvent = InferInsertModel<typeof auditEvents>;
+
 // ---------------------------------------------------------------------------
 // Application-level types
 // ---------------------------------------------------------------------------
@@ -31,6 +53,8 @@ export type DeviceStatus = "online" | "offline" | "busy" | "error";
 export type TaskStatus = "pending" | "running" | "completed" | "failed" | "cancelled";
 
 export type LogLevel = "debug" | "info" | "warn" | "error";
+
+export type IntegrationStatus = "pending" | "connected" | "degraded" | "disabled";
 
 /** Context object available in Server Components and API routes. */
 export interface TenantContext {

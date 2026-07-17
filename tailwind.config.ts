@@ -10,17 +10,21 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          50:  "#f0f4ff",
-          100: "#dce6ff",
-          200: "#b3c8ff",
-          300: "#80a4ff",
-          400: "#4d7eff",
-          500: "#1a56ff",
-          600: "#0038e6",
-          700: "#002bb3",
-          800: "#001f80",
-          900: "#00144d",
+          50:  "#fff5ed",
+          100: "#ffe8d5",
+          200: "#ffceaa",
+          300: "#ffaa73",
+          400: "#fa7b38",
+          500: "#e8520f",
+          600: "#d63e08",
+          700: "#b12c09",
+          800: "#8d250f",
+          900: "#722210",
+          950: "#3d0e06",
         },
+      },
+      boxShadow: {
+        glow: "0 0 80px rgba(232, 82, 15, 0.22)",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
